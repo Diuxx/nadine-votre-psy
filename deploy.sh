@@ -5,13 +5,14 @@ set -e  # stoppe le script à la moindre erreur
 # VARIABLES
 PROJECT_DIR="$(pwd)"
 BUILD_DIR="_site"
-WWW_DIR="/var/www/nicoblog"
+SITE_NAME="nadine-votre-psy.fr"
+WWW_DIR="/var/www/$SITE_NAME"
 NGINX_CONF_SRC="$PROJECT_DIR/nginx/nicoblog.conf"
-NGINX_CONF_DST="/etc/nginx/sites-available/nicoblog"
-NGINX_ENABLED="/etc/nginx/sites-enabled/nicoblog"
+NGINX_CONF_DST="/etc/nginx/sites-available/$SITE_NAME"
+NGINX_ENABLED="/etc/nginx/sites-enabled/$SITE_NAME"
 
 # SSL Variables
-DOMAIN="nicoblog.dev"
+DOMAIN="nadine-votre-psy.fr"
 EMAIL="nicolasmarmot@gmail.com"
 
 echo "🚀 Starting deployment..."
@@ -54,16 +55,16 @@ sudo systemctl reload nginx
 
 echo "✅ Deployment complete!"
 
-if [ ! -f "/etc/letsencrypt/renewal/$DOMAIN.conf" ]; then
-  echo "🔐 No SSL certificate found, generating one..."
+# if [ ! -f "/etc/letsencrypt/renewal/$DOMAIN.conf" ]; then
+#   echo "🔐 No SSL certificate found, generating one..."
 
-  sudo certbot --nginx \
-    -d "$DOMAIN" \
-    -d "www.$DOMAIN" \
-    --non-interactive \
-    --agree-tos \
-    --email "$EMAIL" \
-    --redirect
-else
-  echo "🔒 SSL certificate already exists"
-fi
+#   sudo certbot --nginx \
+#     -d "$DOMAIN" \
+#     -d "www.$DOMAIN" \
+#     --non-interactive \
+#     --agree-tos \
+#     --email "$EMAIL" \
+#     --redirect
+# else
+#   echo "🔒 SSL certificate already exists"
+# fi
