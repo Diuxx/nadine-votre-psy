@@ -36,3 +36,13 @@ textarea:focus-visible {
   font-weight: bold;
   margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+
+
+}
+
+.contact-container {
+  width: 100%;
+  padding: 0 10px;
+}
