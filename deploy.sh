@@ -55,16 +55,16 @@ sudo systemctl reload nginx
 
 echo "✅ Deployment complete!"
 
-# if [ ! -f "/etc/letsencrypt/renewal/$DOMAIN.conf" ]; then
-#   echo "🔐 No SSL certificate found, generating one..."
+if [ ! -f "/etc/letsencrypt/renewal/$DOMAIN.conf" ]; then
+  echo "🔐 No SSL certificate found, generating one..."
 
-#   sudo certbot --nginx \
-#     -d "$DOMAIN" \
-#     -d "www.$DOMAIN" \
-#     --non-interactive \
-#     --agree-tos \
-#     --email "$EMAIL" \
-#     --redirect
-# else
-#   echo "🔒 SSL certificate already exists"
-# fi
+  sudo certbot --nginx \
+    -d "$DOMAIN" \
+    -d "www.$DOMAIN" \
+    --non-interactive \
+    --agree-tos \
+    --email "$EMAIL" \
+    --redirect
+else
+  echo "🔒 SSL certificate already exists"
+fi
