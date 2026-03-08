@@ -5,9 +5,9 @@ set -e  # stoppe le script à la moindre erreur
 # VARIABLES
 PROJECT_DIR="$(pwd)"
 BUILD_DIR="_site"
-SITE_NAME="nadine-votre-psy.fr"
+SITE_NAME="nadine-votre-psy"
 WWW_DIR="/var/www/$SITE_NAME"
-NGINX_CONF_SRC="$PROJECT_DIR/nginx/nicoblog.conf"
+NGINX_CONF_SRC="$PROJECT_DIR/nginx/$SITE_NAME.conf"
 NGINX_CONF_DST="/etc/nginx/sites-available/$SITE_NAME"
 NGINX_ENABLED="/etc/nginx/sites-enabled/$SITE_NAME"
 
