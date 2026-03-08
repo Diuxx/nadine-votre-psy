@@ -24,18 +24,18 @@
 
       <!-- Open Graph: preview when sharing on social platforms -->
       <meta property="og:type" content="website">
-      <meta property="og:locale" content="en_US">
+      <meta property="og:locale" content="fr_FR">
       <meta property="og:site_name" content="{{ meta.default.title }}">
       <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ meta.default.title }}{% endif %}">
       <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ meta.default.description }}{% endif %}">
       <meta property="og:url" content="{{ meta.default.siteUrl }}{{ page.url }}">
-      <meta property="og:image" content="{{ meta.default.siteUrl }}/src/assets/images/og-image.jpg">
+      <meta property="og:image" content="{{ meta.default.siteUrl }}/src/assets/images/nadine-small.jpg">
 
       <!-- Twitter Card: optimized preview for Twitter/X -->
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ meta.default.title }}{% endif %}">
       <meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ meta.default.description }}{% endif %}">
-      <meta name="twitter:image" content="{{ meta.default.siteUrl }}/src/assets/images/og-image.jpg">
+      <meta name="twitter:image" content="{{ meta.default.siteUrl }}/src/assets/images/nadine-small.jpg">
       
       <!-- Browser tab icon -->
       <link rel="icon" href="{{ '/src/assets/favicon.webp' | url }}" type="image/x-icon">
