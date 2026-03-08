@@ -1,0 +1,60 @@
+<header>
+  <a class="logo" href="/">
+    <img src="{{ '/src/assets/images/logo.png' | url }}" alt="Logo" width="42">
+    <h3>Nadine votre psy</h3>
+  </a>
+
+  <div class="menu" id="primary-menu">
+    <a href="#gestalt">Qu'est ce que la Gestalt ?</a>
+    <a href="#about">Qui suis-je ?</a>
+    <a href="#who">Pour qui ?</a>
+    <a href="#how">Comment ?</a>
+  </div>
+
+  <div class="appointment">
+    <a href="#appointment">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<!-- <header>
+  <div class="header-left">
+    <a class="logo" routerLink="/home">
+      <img src="images/logo.png" alt="Logo">
+    </a>
+  </div>
+  <div class="header-center">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      @for (link of links; track link.label) {
+        @if (link.requiredAdmin && store.isAdmin()) {
+          <a 
+            mat-tab-link 
+            [routerLink]="link.route"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive"
+          > {{ link.label }} </a>
+        }
+
+        @if (!link.requiredAdmin) {
+          <a 
+            mat-tab-link 
+            [routerLink]="link.route"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive"
+          > {{ link.label }} </a>
+        }
+      }
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+  </div>
+  <div class="header-right">
+    @if (store.isAuthenticated()) {
+      <button matButton (click)="logout()">Logout</button>
+    } 
+    @else {
+      <a mat-button [routerLink]="['/auth/login']">Connexion</a>
+    }
+  </div>
+</header> -->
