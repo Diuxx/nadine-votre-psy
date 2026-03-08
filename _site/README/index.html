@@ -1,28 +1,56 @@
-<h1>nicoblog.dev</h1>
-<p>Portfolio &amp; blog statique construit avec Eleventy (11ty).</p>
+<h1>nadine-votre-psy.fr</h1>
+<p>Site statique de Nadine Marmot-Métayer (psycho-praticienne Gestalt), construit avec Eleventy (11ty).</p>
+<h2>Domaine</h2>
+<ul>
+<li>Production: <code>https://nadine-votre-psy.fr</code></li>
+<li>Variante: <code>https://www.nadine-votre-psy.fr</code></li>
+</ul>
 <h2>Prérequis</h2>
 <ul>
-<li>Node.js 18+ recommandé</li>
-<li>npm (fourni avec Node.js)</li>
+<li>Node.js 18+</li>
+<li>npm</li>
+<li>(Déploiement serveur) Nginx, <code>sudo</code>, et Certbot</li>
 </ul>
 <h2>Installation</h2>
-<pre><code class="language-cmd">npm install
+<pre><code class="language-bash">npm install
 </code></pre>
-<h2>Démarrer en local (dev server)</h2>
-<pre><code class="language-cmd">npm run dev
+<h2>Développement local</h2>
+<pre><code class="language-bash">npm run dev
 </code></pre>
-<p>Ouvre un serveur avec rechargement à <code>http://localhost:8080</code>.</p>
+<p>Serveur local avec rechargement sur <code>http://localhost:8080</code>.</p>
 <h2>Build de production</h2>
-<pre><code class="language-cmd">npm run build
+<pre><code class="language-bash">npm run build
 </code></pre>
-<p>Génère le site dans le dossier <code>_site/</code>.</p>
-<h2>Structure</h2>
+<p>Le site est généré dans <code>_site/</code>.</p>
+<h2>SEO et pages techniques</h2>
 <ul>
-<li><code>index.html</code>: page d’accueil (À propos, Compétences, Projets, Contact)</li>
-<li><code>_includes/</code>: layout, header, footer</li>
-<li><code>_data/meta.js</code>: données (héros, compétences, citations)</li>
-<li><code>projects/</code>: pages des projets (collection Eleventy)</li>
-<li><code>src/styles/main.css</code>: styles</li>
-<li><code>src/scripts/quotes.js</code>: rotation des citations</li>
-<li><code>src/scripts/menu.js</code>: menu responsive</li>
+<li><code>sitemap.xml</code> générée via <code>sitemap.xml.njk</code></li>
+<li>page 404 générée via <code>404.md</code> → <code>/404.html</code></li>
+<li>URL canonique définie dans <code>_data/meta.js</code></li>
+</ul>
+<h2>Déploiement serveur</h2>
+<p>Script prêt à l’emploi:</p>
+<pre><code class="language-bash">./deploy.sh
+</code></pre>
+<p>Ce script :</p>
+<ul>
+<li>build le site Eleventy</li>
+<li>copie <code>_site/</code> vers <code>/var/www/nadine-votre-psy</code></li>
+<li>installe/active la conf Nginx</li>
+<li>teste puis recharge Nginx</li>
+<li>génère le certificat SSL via Certbot si absent</li>
+</ul>
+<h2>Configuration Nginx</h2>
+<ul>
+<li>Fichier projet: <code>nginx/nadine-votre-psy.conf</code></li>
+<li>Site activé sur serveur: <code>/etc/nginx/sites-available/nadine-votre-psy</code> + symlink dans <code>sites-enabled</code></li>
+</ul>
+<h2>Structure utile</h2>
+<ul>
+<li><code>index.html</code> : page d’accueil</li>
+<li><code>404.md</code> : page 404</li>
+<li><code>sitemap.xml.njk</code> : génération sitemap</li>
+<li><code>_includes/</code> : layout, header, footer</li>
+<li><code>_data/meta.js</code> : métadonnées (title, description, siteUrl)</li>
+<li><code>src/styles/main.css</code> : styles + responsive</li>
 </ul>
