@@ -297,6 +297,11 @@ h4 {
 }
 
 @media (max-width: 1024px) {
+
+  .site-footer {
+    margin: 10px 0;
+  }
+  
   header {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -384,7 +389,7 @@ h4 {
 
   .box,
   .box-2 {
-    width: 100vw;
+    /* width: 100vw; */
     padding: 20px;
   }
 
