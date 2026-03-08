@@ -63,47 +63,6 @@
     <a href="#appointment">Prendre rendez-vous</a>
   </div>
 </header>
-  <div class="header-left">
-    <a class="logo" routerLink="/home">
-      <img src="images/logo.png" alt="Logo">
-    </a>
-  </div>
-  <div class="header-center">
-    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-      @for (link of links; track link.label) {
-        @if (link.requiredAdmin && store.isAdmin()) {
-          <a 
-            mat-tab-link 
-            [routerLink]="link.route"
-            routerLinkActive
-            #rla="routerLinkActive"
-            [active]="rla.isActive"
-          >  </a>
-        }
-
-        @if (!link.requiredAdmin) {
-          <a 
-            mat-tab-link 
-            [routerLink]="link.route"
-            routerLinkActive
-            #rla="routerLinkActive"
-            [active]="rla.isActive"
-          >  </a>
-        }
-      }
-    </nav>
-    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
-
-  </div>
-  <div class="header-right">
-    @if (store.isAuthenticated()) {
-      <button matButton (click)="logout()">Logout</button>
-    } 
-    @else {
-      <a mat-button [routerLink]="['/auth/login']">Connexion</a>
-    }
-  </div>
-</header> -->
     <!-- Page content -->
     <div class="container">
   <section class="part presentation">
