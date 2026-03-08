@@ -1,0 +1,125 @@
+<!Doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+
+      <!-- Responsive layout for mobile and tablet devices -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <!-- SEO title: shown in search results and browser tab -->
+      <title>Page non trouvée | Nadine - Psycho-praticienne Gestalt à votre écoute</title>
+      
+      <!-- SEO description: summary displayed in search engine results -->
+      <meta name="description" content="Je suis une psycho-praticienne certifiée en Gestalt et je vous accompagne sur le chemin de la découverte de soi et de l'épanouissement personnel. Séances en présentiel ou à distance, pour adultes, adolescents, couples et familles. Découvrez la Gestalt, mon approche, pour qui elle s'adresse et comment se déroule l'accompagnement.">
+      
+      <!-- Canonical URL: prevents duplicate content issues -->
+      <link rel="canonical" href="https://nadine-votre-psy.fr/404.html">
+
+      <!-- Search engine indexing rules -->
+      <meta name="robots" content="index, follow">
+      <meta name="googlebot" content="index, follow">
+
+      <!-- Website author (credibility signal) -->
+      <meta name="author" content="Nadine Marmot">
+
+      <!-- Open Graph: preview when sharing on social platforms -->
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Nadine - Psycho-praticienne Gestalt à votre écoute">
+      <meta property="og:title" content="Page non trouvée">
+      <meta property="og:description" content="Je suis une psycho-praticienne certifiée en Gestalt et je vous accompagne sur le chemin de la découverte de soi et de l'épanouissement personnel. Séances en présentiel ou à distance, pour adultes, adolescents, couples et familles. Découvrez la Gestalt, mon approche, pour qui elle s'adresse et comment se déroule l'accompagnement.">
+      <meta property="og:url" content="https://nadine-votre-psy.fr/404.html">
+      <meta property="og:image" content="https://nadine-votre-psy.fr/src/assets/images/og-image.jpg">
+
+      <!-- Twitter Card: optimized preview for Twitter/X -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="Page non trouvée">
+      <meta name="twitter:description" content="Je suis une psycho-praticienne certifiée en Gestalt et je vous accompagne sur le chemin de la découverte de soi et de l'épanouissement personnel. Séances en présentiel ou à distance, pour adultes, adolescents, couples et familles. Découvrez la Gestalt, mon approche, pour qui elle s'adresse et comment se déroule l'accompagnement.">
+      <meta name="twitter:image" content="https://nadine-votre-psy.fr/src/assets/images/og-image.jpg">
+      
+      <!-- Browser tab icon -->
+      <link rel="icon" href="/src/assets/favicon.webp" type="image/x-icon">
+
+      <!-- Main stylesheet -->
+      <link rel="stylesheet" href="/src/styles/main.css">
+      <link rel="stylesheet" href="/src/styles/contact-form.css">
+  </head>
+  <body>
+    <!-- Site header -->
+    <header>
+  <a class="logo" href="/">
+    <img src="/src/assets/images/logo.png" alt="Logo" width="42">
+    <h3>Nadine votre psy</h3>
+  </a>
+
+  <div class="menu" id="primary-menu">
+    <a href="#gestalt">Qu'est ce que la Gestalt ?</a>
+    <a href="#about">Qui suis-je ?</a>
+    <a href="#how">Comment ?</a>
+    <a href="#who">Pour qui ?</a>
+  </div>
+
+  <div class="appointment">
+    <a href="#appointment">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<!-- <header>
+  <div class="header-left">
+    <a class="logo" routerLink="/home">
+      <img src="images/logo.png" alt="Logo">
+    </a>
+  </div>
+  <div class="header-center">
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      @for (link of links; track link.label) {
+        @if (link.requiredAdmin && store.isAdmin()) {
+          <a 
+            mat-tab-link 
+            [routerLink]="link.route"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive"
+          >  </a>
+        }
+
+        @if (!link.requiredAdmin) {
+          <a 
+            mat-tab-link 
+            [routerLink]="link.route"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [active]="rla.isActive"
+          >  </a>
+        }
+      }
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+  </div>
+  <div class="header-right">
+    @if (store.isAuthenticated()) {
+      <button matButton (click)="logout()">Logout</button>
+    } 
+    @else {
+      <a mat-button [routerLink]="['/auth/login']">Connexion</a>
+    }
+  </div>
+</header> -->
+    <!-- Page content -->
+    <div class="container">
+  <section class="part presentation">
+    <h1>404</h1>
+    <p>La page que vous cherchez n’existe pas.</p>
+    <p><a href="/">Retour à l’accueil</a></p>
+  </section>
+</div>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+	<p>© Nadine Marmot-Métayer — Tous droits réservés.</p>
+</footer>
+    <script src="/src/scripts/menu.js" defer></script>
+    <script src="/src/scripts/form.js" defer></script>
+  </body>
+</html>
