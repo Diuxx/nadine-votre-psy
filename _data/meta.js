@@ -10,15 +10,5 @@ export default {
   hero: {
     title: 'Je m\'appelle Nadine et je suis psycho-praticienne Gestalt.',
     subtitle: 'Bienvenue sur mon site. Je vous accompagne sur le chemin de la découverte de soi et de l\'épanouissement personnel.',
-  },
-  tools: [
-    { name: 'Les couleurs du web', url: 'https://htmlcolorcodes.com/fr/' },
-    { name: 'Générateur de dégradés', url: 'https://cssgradient.io/' },
-    { name: 'Polices Google', url: 'https://fonts.google.com/' },
-    { name: 'Icones SVG', url: 'https://www.svgrepo.com/' },
-    { name: 'Simple SVG icons', url: 'https://simpleicons.org/' },
-    { name: 'CSS Scan', url: 'https://getcssscan.com/' },
-    { name: 'Unsplash', url: 'https://unsplash.com/' },
-    { name: 'Pexels', url: 'https://www.pexels.com/fr-fr/' },
-  ]
+  }
 }
