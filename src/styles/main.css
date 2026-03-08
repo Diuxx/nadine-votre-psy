@@ -218,6 +218,10 @@ header .appointment a {
   text-align: center;
 }
 
+.part img {
+  border-radius: 20px;
+}
+
 .box, .box-2 {
   padding: 40px;
   border-radius: 20px;
