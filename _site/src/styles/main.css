@@ -312,7 +312,6 @@ h4 {
     gap: 12px;
     padding: 16px;
     margin: 0 10px;
-    width: calc(100vw - 16px - 20px);
   }
 
   header .logo {
