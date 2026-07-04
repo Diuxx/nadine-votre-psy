@@ -1,0 +1,81 @@
+<!Doctype html>
+<html lang="fr">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <title>{{ title }} | {{ meta.default.title }}</title>
+      <meta name="description" content="{{ description }}">
+      <link rel="canonical" href="{{ meta.default.siteUrl }}{{ page.url }}">
+
+      <meta name="robots" content="index, follow">
+      <meta name="googlebot" content="index, follow">
+      <meta name="author" content="{{ author or meta.default.author }}">
+
+      <!-- Open Graph -->
+      <meta property="og:type" content="article">
+      <meta property="og:locale" content="fr_FR">
+      <meta property="og:site_name" content="{{ meta.default.title }}">
+      <meta property="og:title" content="{{ title }}">
+      <meta property="og:description" content="{{ description }}">
+      <meta property="og:url" content="{{ meta.default.siteUrl }}{{ page.url }}">
+      {% if image %}
+      <meta property="og:image" content="{{ meta.default.siteUrl }}{{ image }}">
+      {% else %}
+      <meta property="og:image" content="{{ meta.default.siteUrl }}/src/assets/images/nadine-small.jpg">
+      {% endif %}
+
+      <!-- Article metadata for SEO -->
+      {% if date %}<meta property="article:published_time" content="{{ date | htmlDateString }}">{% endif %}
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{ title }}">
+      <meta name="twitter:description" content="{{ description }}">
+      {% if image %}
+      <meta name="twitter:image" content="{{ meta.default.siteUrl }}{{ image }}">
+      {% else %}
+      <meta name="twitter:image" content="{{ meta.default.siteUrl }}/src/assets/images/nadine-small.jpg">
+      {% endif %}
+
+      <link rel="icon" href="{{ '/src/assets/favicon.webp' | url }}" type="image/x-icon">
+      <link rel="stylesheet" href="{{ '/src/styles/main.css' | url }}">
+      <link rel="stylesheet" href="{{ '/src/styles/contact-form.css' | url }}">
+      <link rel="stylesheet" href="{{ '/src/styles/article.css' | url }}">
+  </head>
+  <body>
+    {% include 'header.html' %}
+
+    <div class="container">
+
+      <section class="part presentation">
+        {% if category %}<p class="article-category">{{ category }}</p>{% endif %}
+        <h1 class="article-title">{{ title }}</h1>
+        <p class="article-meta">
+          <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+          <span>· {{ content | readingTime }} min de lecture</span>
+        </p>
+      </section>
+
+      {% if image %}
+      <section class="part">
+        <img class="article-cover" src="{{ image }}" alt="{{ imageAlt or title }}" width="800" height="450">
+      </section>
+      {% endif %}
+
+      <section class="part box bg-4">
+        <div class="article-content">
+          {{ content }}
+        </div>
+        <div class="article-footer">
+          <a href="/articles/" class="back-link">← Retour aux articles</a>
+        </div>
+      </section>
+
+    </div>
+
+    {% include 'footer.html' %}
+    <script src="{{ '/src/scripts/menu.js' | url }}" defer></script>
+    <script src="{{ '/src/scripts/form.js' | url }}" defer></script>
+  </body>
+</html>

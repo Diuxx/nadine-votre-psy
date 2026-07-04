@@ -109,6 +109,20 @@ layout: layout.html
     <blockquote style="color: white;" cite="Aristote.">« Ce n’est pas par l’éviction de l’obscurité<br>que nous devenons lumineux, mais<br>en acceptant la lumière et l’obscurité en nous. » <br><b>Carl Gustav Jung.</b></blockquote>
   </section>
 
+  <section class="part box bg-3" style="text-align: left;">
+    <h4>Derniers articles</h4>
+    <ul class="home-articles-list">
+      {% assign latestArticles = collections.articles | reverse %}
+      {% for article in latestArticles limit:3 %}
+      <li>
+        <a href="{{ article.url }}">{{ article.data.title }}</a>
+        <span>{{ article.date | readableDate }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <a class="home-articles-link" href="/articles/">Voir tous les articles</a>
+  </section>
+
   <section id="contact" class="box-2 bg-4" style="text-align: left;">
     <div>
       <h4 style="margin-bottom: 2px;">Contactez-moi</h4>

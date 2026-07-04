@@ -1,0 +1,40 @@
+---
+layout: layout.html
+title: Articles
+description: Retrouvez les articles de Nadine sur la psychothérapie Gestalt, le développement personnel et le bien-être émotionnel.
+permalink: /articles/
+eleventyExcludeFromCollections: true
+---
+
+<div class="container">
+
+  <section class="part presentation">
+    <h1>Articles</h1>
+    <span>Réflexions et ressources sur la Gestalt, la découverte de soi et le mieux-être.</span>
+  </section>
+
+  <section class="part box bg-4" style="margin: 0 auto;">
+    <ul class="articles-list">
+      {%- for article in collections.articles | reverse -%}
+      <li class="article-card" style="list-style: none;">
+        <a href="{{ article.url }}">
+          {% if article.data.image %}
+          <img src="{{ article.data.image }}" alt="{{ article.data.imageAlt or article.data.title }}" width="400" height="225" loading="lazy">
+          {% endif %}
+          <div class="article-card-body">
+            {% if article.data.category %}
+            <p class="article-category">{{ article.data.category }}</p>
+            {% endif %}
+            <h2>{{ article.data.title }}</h2>
+            <p class="article-excerpt">{{ article.data.description }}</p>
+            <p class="article-date">
+              <time datetime="{{ article.date | htmlDateString }}">{{ article.date | readableDate }}</time>
+            </p>
+          </div>
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </section>
+
+</div>
